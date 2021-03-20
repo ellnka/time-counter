@@ -1,0 +1,106 @@
+.base-timer {
+    position: relative;
+    min-height: 300px;
+    width: $desktop-width;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient($background-color, $background-color-dark);
+    border-radius: 50%;
+    box-shadow: 25px 25px 25px 15px $background-color-dark; 
+
+    @media (max-width: $break-point) {
+        width: $mobile-width;
+    }
+
+    &__svg {
+        transform: scaleX(-1);
+    }
+
+    &__circle {
+        fill: none;
+        stroke: none;
+    }
+
+    &__path-elapsed {
+        stroke-width: 5px;
+        stroke: grey;
+    }
+
+    &__path-remaining {
+        stroke-width: 5px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: currentColor;
+        color: rgb(65, 184, 131);
+    }
+
+
+    &__controls {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 20%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 48px;
+
+        @media (max-width: $break-point) {
+            top: 10%;
+        }
+    }
+
+    &__labels {
+        font-size: 100px;
+        padding-bottom: 32px;
+        @media (max-width: $break-point) {
+            padding-bottom: 16px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        button {
+            font-size: 16px;
+            letter-spacing: 12px;
+            margin-bottom: 18px;
+
+            @media (max-width: $break-point) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+.theme {
+    &--red {
+        .base-timer {
+            &__path-remaining {
+                color: $style-color-red;
+            }
+        }
+    }
+
+    &--blue {
+        .base-timer {
+            &__path-remaining {
+                color: $style-color-blue;
+            }
+        }
+    }
+
+    &--purple {
+        .base-timer {
+            &__path-remaining {
+                color: $style-color-purple;
+            }
+        }
+    }
+
+}

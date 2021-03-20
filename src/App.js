@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Timer from './components/Timer';
 import Menu from './components/Menu';
+import Settings from './components/Settings';
+import { timers } from './config';
 
 function App() {
-  const timers = {
-    main: "main-timer",
-    longBreak: "long-break",
-    shortBreak: "short-break"
-  }
 
-  const [shortBreakLength, setShortBreakLength] = useState(1);
-  const [longBreakLength, setLongBreakLength] = useState(5);
-  const [timerLength, setTimerLength] = useState(15);
-  const [activeTimer, setActiveTimer] = useState(timers.main);
-  const [theme, setTheme] = useState("theme--red");
+  const [shortBreakLength, setShortBreakLength] = useState(timers.shortBreak.default);
+  const [longBreakLength, setLongBreakLength] = useState(timers.longBreak.default);
+  const [timerLength, setTimerLength] = useState(timers.main.default);
+  const [activeTimer, setActiveTimer] = useState(timers.main.id);
 
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
+  const activeTimerLength = (activeTimer === timers.longBreak.id) ? longBreakLength : 
+                            (activeTimer === timers.shortBreak.id) ? shortBreakLength : timerLength;
 
   return (
     <div>
@@ -26,9 +21,10 @@ function App() {
         <Menu activeTimer={activeTimer} setActiveTimer={setActiveTimer}/>
       </header>
       <main>
-        <Timer timerLength={(activeTimer === timers.longBreak) ? longBreakLength : (activeTimer === timers.shortBreak) ? shortBreakLength : timerLength} />
+        <Timer timerLength={activeTimerLength} />
       </main>
-
+      <Settings shortBreakLength={shortBreakLength} longBreakLength={longBreakLength} timerLength={timerLength}
+            setShortBreakLength={setShortBreakLength} setLongBreakLength={setLongBreakLength} setTimerLength={setTimerLength}/>
     </div>
   );
 }

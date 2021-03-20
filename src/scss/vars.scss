@@ -1,0 +1,20 @@
+$background-color: #1E213F;
+$background-color-dark: #161932;
+$text-color-grey: #D7E0FF;
+$text-color-dark: #1E213F;
+$background-input: #EFF1FA;
+
+$style-color-red: #F87070;
+$style-color-blue: #70F3F8;
+$style-color-purple: #D881F8;
+
+$desktop-width: 400px;
+$mobile-width: 330px;
+$break-point: 768px;
+
+@mixin hideInput {
+    width: 0; 
+    height: 0; 
+    position: absolute; 
+    left: -9999px;
+}

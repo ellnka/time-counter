@@ -1,15 +1,18 @@
 export const timers = {
     main: {
         id: "main-timer",
-        label: "pomodoro"
+        label: "pomodoro",
+        default: 15
     },
     longBreak: {
         id: "long-break",
-        label: "long break"
+        label: "long break",
+        default: 5
     },
     shortBreak: {
         id: "short-break",
-        label: "short break"
+        label: "short break",
+        default: 1
     }
 }
 

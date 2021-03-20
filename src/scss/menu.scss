@@ -1,0 +1,70 @@
+$mobile-border-radius: 24px;
+$desktop-border-radius: 48px;
+$mobile-height: 32px;
+$desktop-height: 50px;
+
+
+.menu {
+    width: $desktop-width;
+    height: $desktop-height;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: $desktop-border-radius;
+    background: $background-color-dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+    align-items: center;
+    padding: 8px 12px;
+    box-shadow: 1px 1px 25px $background-color-dark;
+
+    @media (max-width: $break-point) {
+        height: $mobile-height;
+        width: $mobile-width;
+        font-size: 12px;
+        border-radius: $mobile-border-radius;
+    }
+
+    input {@include hideInput;}
+
+	input + label {
+		padding: 12px 24px;
+        border-radius: $desktop-border-radius;
+        cursor: pointer;
+
+        @media (max-width: $break-point) {
+            padding: 8px 12px;
+            font-size: 12px;
+            border-radius: $mobile-border-radius;
+        }
+	}
+}
+
+
+.theme {
+    &--red {
+        .menu {
+            input:checked + label {
+                background-color:  $style-color-red;
+            }
+        }
+    }
+
+    &--blue {
+        .menu {
+            input:checked + label {
+                background-color:  $style-color-blue;
+            }
+        }
+    }
+
+    &--purple {
+        .menu {
+            input:checked + label {
+                background-color:  $style-color-purple;
+            }
+        }
+    }
+
+}
