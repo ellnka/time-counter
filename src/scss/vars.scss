@@ -1,16 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+
 $background-color: #1E213F;
 $background-color-dark: #161932;
 $text-color-grey: #D7E0FF;
 $text-color-dark: #1E213F;
+$text-color-white: #FFF;
 $background-input: #EFF1FA;
 
 $style-color-red: #F87070;
 $style-color-blue: #70F3F8;
 $style-color-purple: #D881F8;
 
-$desktop-width: 400px;
+$desktop-width: 450px;
 $mobile-width: 330px;
 $break-point: 768px;
+
+$mobile-border-radius: 24px;
+$desktop-border-radius: 48px;
+
+$font-kumbh: 'Kumbh Sans', sans-serif;
+$font-roboto: 'Roboto Slab', serif;
+$font-space: 'Space Mono', monospace;
 
 @mixin hideInput {
     width: 0; 

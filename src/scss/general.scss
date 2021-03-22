@@ -5,7 +5,6 @@ body {
 html, body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     font-weight: 600;
     color: $text-color-grey;
 }
@@ -47,14 +46,29 @@ button:hover {
     }
 }
 
-.red {
+.theme-red {
     background-color: $style-color-red !important;
 }
 
-.blue {
+.theme-blue {
     background-color: $style-color-blue !important;
 }
 
-.purple {
+.theme-purple {
     background-color: $style-color-purple !important;
+}
+
+
+.font {
+    &--kumbh {
+        font-family: $font-kumbh;
+    }
+
+    &--roboto {
+        font-family: $font-roboto;
+    }
+
+    &--space {
+        font-family: $font-space;
+    }
 }

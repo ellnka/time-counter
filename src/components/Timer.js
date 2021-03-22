@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LABELS } from './../config';
+import { labels } from './../config';
 
 const Timer = ({timerLength}) => {
     const SECONDS = 60;
@@ -105,8 +105,8 @@ const Timer = ({timerLength}) => {
                         <span>{formatTime(timerMinute, timerSecond)}</span>
                     </div>
                     <div  className="base-timer__buttons">
-                        <button onClick={onToggleTimer}>{isTimerRunning ? LABELS.stop : LABELS.start}</button>
-                        {!isTimerRunning && timeLeft !== TIME_LIMIT  && <button onClick={onResetTimer}>{LABELS.reset}</button>}
+                        <button onClick={onToggleTimer}>{isTimerRunning ? labels.stop : labels.start}</button>
+                        {!isTimerRunning && timeLeft !== TIME_LIMIT  && <button onClick={onResetTimer}>{labels.reset}</button>}
                     </div>
                 </div>
             </div>
